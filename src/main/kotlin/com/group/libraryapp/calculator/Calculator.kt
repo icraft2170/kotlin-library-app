@@ -3,10 +3,8 @@ package com.group.libraryapp.calculator
 import java.lang.IllegalArgumentException
 
 data class Calculator(
-    private var _number: Int,
+    var _number: Int,
 ) {
-    val number: Int
-        get() = this._number
 
     fun add(operand: Int) {
         this._number += operand
