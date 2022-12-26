@@ -57,7 +57,7 @@ class CalculatorTest {
         val calculator = Calculator(10)
 
         //when
-        calculator.division(2)
+        calculator.divide(2)
 
         //then
         val expectedCalculator = Calculator(5)
@@ -72,7 +72,7 @@ class CalculatorTest {
 
         //when then
         try {
-            calculator.division(0)
+            calculator.divide(0)
         } catch (e: IllegalArgumentException) {
             if (e.message != "0으로 나눌 수 없습니다.") throw IllegalStateException()
             return
