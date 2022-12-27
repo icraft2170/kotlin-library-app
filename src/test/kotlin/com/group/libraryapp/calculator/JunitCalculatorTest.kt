@@ -28,7 +28,6 @@ class JunitCalculatorTest {
     }
     @Test
     fun multiplyTest() {
-
         //given
         val calculator = Calculator(5)
         //when
