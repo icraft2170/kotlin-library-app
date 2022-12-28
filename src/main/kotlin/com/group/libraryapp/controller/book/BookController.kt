@@ -13,21 +13,13 @@ import org.springframework.web.bind.annotation.RestController
 class BookController (
     private val bookService: BookService,
 ) {
-
     @PostMapping("/book")
-    fun saveBook(@RequestBody request: BookRequest) {
-        bookService.saveBook(request)
-    }
+    fun saveBook(@RequestBody request: BookRequest) = bookService.saveBook(request)
 
     @PostMapping("/book/loan")
-    fun loanBook(@RequestBody request: BookLoanRequest) {
-        bookService.loanBook(request)
-    }
+    fun loanBook(@RequestBody request: BookLoanRequest) = bookService.loanBook(request)
+
 
     @PutMapping("/book/return")
-    fun returnBook(@RequestBody request: BookReturnRequest) {
-        bookService.returnBook(request)
-    }
-
-
+    fun returnBook(@RequestBody request: BookReturnRequest) = bookService.returnBook(request)
 }

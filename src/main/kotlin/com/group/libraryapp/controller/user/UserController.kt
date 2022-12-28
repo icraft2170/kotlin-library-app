@@ -16,30 +16,15 @@ import org.springframework.web.bind.annotation.RestController
 class UserController (
     val userService: UserService,
 ) {
-
     @PostMapping("/user")
-    fun saveUser(@RequestBody request: UserCreateRequest) {
-        userService.saveUser(request)
-    }
+    fun saveUser(@RequestBody request: UserCreateRequest) = userService.saveUser(request)
 
     @GetMapping("/user")
-    fun getUsers(): List<UserResponse> {
-        return userService.getUsers()
-    }
+    fun getUsers(): List<UserResponse> = userService.getUsers()
 
     @PutMapping("/user")
-    fun updateUserName(@RequestBody request: UserUpdateRequest) {
-        userService.updateUserName(request)
-    }
+    fun updateUserName(@RequestBody request: UserUpdateRequest) = userService.updateUserName(request)
 
     @DeleteMapping("/user")
-    fun saveUser(@RequestParam name: String) {
-        userService.deleteUser(name)
-    }
-
-
-
-
-
-
+    fun deleteUser(@RequestParam name: String) = userService.deleteUser(name)
 }
