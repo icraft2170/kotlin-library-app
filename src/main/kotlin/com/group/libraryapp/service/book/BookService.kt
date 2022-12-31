@@ -45,13 +45,11 @@ class BookService (
 
     @Transactional(readOnly = true)
     fun countLoanedBook(): Int {
-        return userLoanHistoryRepository.findAllByStatus(UserLoanStatus.LOANED).size
+        return userLoanHistoryRepository.countByStatus(UserLoanStatus.LOANED).toInt()
     }
 
     @Transactional(readOnly = true)
     fun getBookStatistics(): List<BookStatsResponse> {
-        return bookRepository.findAll()
-            .groupBy { book -> book.type }
-            .map { (type, books) -> BookStatsResponse(type, books.size) }
+        return bookRepository.getStats()
     }
 }
