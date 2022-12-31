@@ -74,7 +74,7 @@ class UserServiceTest @Autowired constructor(
 
         //then
         val result = userRepository.findAll()[0]
-        assertThat(request.name).isEqualTo("B")
+        assertThat(result.name).isEqualTo("B")
     }
 
     @Test
